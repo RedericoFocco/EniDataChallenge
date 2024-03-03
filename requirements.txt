@@ -5,3 +5,7 @@ scikit-learn
 matplotlib
 seaborn
 xgboost
+flask
+scipy
+imblearn
+lightgbm[scikit-learn]
