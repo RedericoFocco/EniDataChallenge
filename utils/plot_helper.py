@@ -111,3 +111,16 @@ def make_confusion_matrix(cf,
     
     if title:
         plt.title(title)
+        
+def plot_target_class_occurences(occurrences_per_class,class_names):
+    sns.set_style("whitegrid")
+    fig,ax=plt.subplots(1,2,figsize=(8, 6))
+    ax[0].pie(occurrences_per_class, labels=class_names, autopct='%1.1f%%', startangle=140, colors=sns.color_palette("pastel"))
+    ax[0].set_title('Class Distribution')
+    sns.barplot(x=class_names, y=occurrences_per_class, palette="pastel", ax=ax[1])
+    ax[1].set_xlabel('Class')
+    ax[1].set_ylabel('Count')
+    plt.setp(ax[1].xaxis.get_majorticklabels(), rotation=45)
+    plt.tight_layout()
+    fig.show()
+    
